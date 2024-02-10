@@ -14,7 +14,10 @@ class HBNBCommand(cmd.Cmd):
     def do_help(self, args):
         """Returns information about Class methods"""
         super().do_help(args)
-        return False
+
+    def emptyline(self):
+        """Do nothing"""
+        return False 
 
     def do_quit(self, args):
         """Quit command to exit the program"""
