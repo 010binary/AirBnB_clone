@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Command Interpreter Model"""
 import cmd
+# from models import storage
+from models.base_model import BaseModel
 
 
 class HBNBCommand(cmd.Cmd):
@@ -12,28 +14,28 @@ class HBNBCommand(cmd.Cmd):
         super().__init__()
 
     def do_help(self, args):
-        """Returns information about Class methods"""
+        """Returns information about Class methods\n"""
         super().do_help(args)
 
     def emptyline(self):
-        """Do nothing"""
-        return False 
+        """Do nothing\n"""
+        return False
 
     def do_quit(self, args):
-        """Quit command to exit the program"""
+        """Quit command to exit the program\n"""
         return True
 
     def do_EOF(self, args):
-        """EOF command to exit the program"""
+        """EOF command to exit the program\n"""
         return True
 
     def do_create(self, args):
         """Creates a new instance of BaseModel,
-	saves it (to the JSON file) and prints the id\n
-	"""
+        saves it (to the JSON file and prints the id\n
+        """
         if not args:
             print("** class name missing **")
-        elif exist(args[0]):
+        elif args[0] != "BaseModel":
             print("** class doesn't exist **")
         else:
             bm = BaseModel()
@@ -41,8 +43,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, args):
         """Prints the string representation of an instance based
-	on the class name and id\n
-	"""
+        on the class name and id\n
+        """
         if not args:
             print("** class name missing **")
         elif exist(args[0]):
@@ -54,8 +56,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, args):
         """Deletes an instance based on the class name and id
-	(save the change into the JSON file).\n
-	"""
+        (save the change into the JSON file).\n
+        """
         if not args:
             print("** class name missing **")
         elif exist(args[0]):
@@ -67,8 +69,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, args):
         """Prints all string representation of all instances based
-	or not on the class name.\n
-	"""
+        or not on the class name.\n
+        """
         if exist(args[0]):
             print("** class doesn't exist **")
         else:
@@ -80,10 +82,10 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, args):
         '''Updates an instance based on the class name and id
-	by adding or updating attribute
-	(save the change into the JSON file)
-	Usage: update <class name> <id> <attribute name> "<attribute value>"
-	'''
+        by adding or updating attribute
+        (save the change into the JSON file)
+        Usage: update <class name> <id> <attribute name> "<attribute value>"
+        '''
         if not args:
             print("** class name missing **")
         elif exist(args[0]):
@@ -92,6 +94,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             bm = BaseModel()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
