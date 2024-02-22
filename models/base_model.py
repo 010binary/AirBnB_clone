@@ -44,27 +44,32 @@ class BaseModel:
         Prints the string representation of
         [<class name>] (<self.id>) <self.__dict__>
         """
-        cls = (str(type(self)).split('.')[-1]).split('\'')[0]
-        return '[{}] ({}) {}'.format(cls, self.id, self.__dict__)
+        return ('[{}] ({}) {}'.
+                format(self.__class__.__name__, self.id, self.__dict__))
 
     def save(self):
         """
         updates the public instance attribute updated_at with
         the current datetime.
         """
-        from models import storage
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
         
     def to_dict(self):
         """
         returns a dict_obj containing all keys/values
         of __dict__ of the instance.
         """
-        dict_obj = {}
-        dict_obj.update(self.__dict__)
-        dict_obj.update({'__class__':
-                          (str(type(self)).split('.')[-1]).split('\'')[0]})
-        dict_obj['created_at'] = self.created_at.isoformat()
-        dict_obj['updated_at'] = self.updated_at.isoformat()
-        return dict_obj
+        dic = self.__dict__.copy()
+        dic["created_at"] = self.created_at.isoformat()
+        dic["updated_at"] = self.updated_at.isoformat()
+        dic["__class__"] = self.__class__.__name__
+        return dic
+    
+    def __repr__(self) -> str:
+        """
+        returns string representation
+        Returns:
+            str: _Object_
+        """
+        return (self.__str__())
