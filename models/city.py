@@ -4,6 +4,10 @@ from .base_model import BaseModel
 
 
 class City(BaseModel):
-    """represents City"""
+    """
+    represents City
+    state_id: (str) 
+    name: (str)
+    """
     state_id = ""
     name = ""

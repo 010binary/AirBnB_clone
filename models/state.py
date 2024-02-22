@@ -4,5 +4,8 @@ from .base_model import BaseModel
 
 
 class State(BaseModel):
-    """represents State"""
+    """
+    represents State
+    name: (str)
+    """
     name = ""
