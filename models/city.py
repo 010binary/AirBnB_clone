@@ -6,8 +6,8 @@ from .base_model import BaseModel
 class City(BaseModel):
     """
     represents City
-    state_id: (str) 
+    state_id: (str)
     name: (str)
     """
     state_id = ""
-    name = ""
+    name = ""\n
