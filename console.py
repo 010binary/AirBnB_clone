@@ -21,9 +21,10 @@ def parse(arg):
         arg (str): The string to be parsed.
 
     Returns:
-        list: A list containing the elements of the string, 
+        list: A list containing the elements of the string,
                 separated and stripped of commas,
-                with optional curly braces or brackets included as separate elements.
+                with optional curly braces or
+                brackets included as separate elements.
     """
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
@@ -57,7 +58,7 @@ class HBNBCommand(cmd.Cmd):
         "Place",
         "Amenity",
         "Review"
-    }
+        }
     
     def do_quit(self, arg):
         """Quit functionality 
@@ -281,7 +282,9 @@ class HBNBCommand(cmd.Cmd):
                             Update multiple attributes of an instance using a dictionary.
 
         Args:
-            arg (str): A string containing the class name, ID, attribute name/value, or a dictionary.
+            arg (str): A string containing the class name, 
+                        ID, attribute name/value, 
+                        or a dictionary.
 
         Returns:
             bool: True if the update was successful, False otherwise.
@@ -331,4 +334,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    HBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()\n
