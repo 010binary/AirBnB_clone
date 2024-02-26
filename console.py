@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
     """class that contains the entry point of the command interpreter
 
     Args:
-        cmd (str): gives all entry point to the Cmd tool 
+        cmd (str): gives all entry point to the Cmd tool
     """
     prompt = "(hbnb) "
     __classes = {
@@ -59,7 +59,7 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
         }
-    
+
     def do_quit(self, arg):
         """Quit functionality 
 
@@ -174,7 +174,9 @@ class HBNBCommand(cmd.Cmd):
     
     def do_show(self, arg):
         """
-        Display the string representation of a class instance with the given ID.
+        Display the string representation of a 
+            class instance with the given ID.
+        
         Usage:
             show <class> <id> or <class>.show(<id>)
         Args:
