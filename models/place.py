@@ -7,8 +7,8 @@ class Place(BaseModel):
     """
     represents Place
     Public class attributes:
-        city_id:             (str) 
-        user_id:             (str) 
+        city_id:             (str)
+        user_id:             (str)
         name:                (str)
         description:         (str)
         number_rooms:        (int) 0
@@ -29,4 +29,4 @@ class Place(BaseModel):
     price_by_night = 0
     latitude = 0.0
     longitude = 0.0
-    amenity_ids = []
+    amenity_ids = []\n

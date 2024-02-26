@@ -8,6 +8,8 @@ from uuid import uuid4
 import models
 
 class BaseModel:
+
+
     """
     Class initialization.
     """
@@ -36,7 +38,6 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
             models.storage.new(self)
-            
 
     def __str__(self):
         """
@@ -54,7 +55,7 @@ class BaseModel:
         """
         self.updated_at = datetime.now()
         models.storage.save()
-        
+
     def to_dict(self):
         """
         returns a dict_obj containing all keys/values
@@ -65,11 +66,11 @@ class BaseModel:
         dic["updated_at"] = self.updated_at.isoformat()
         dic["__class__"] = self.__class__.__name__
         return dic
-    
+
     def __repr__(self) -> str:
         """
         returns string representation
         Returns:
             str: _Object_
         """
-        return (self.__str__())
+        return (self.__str__())\n

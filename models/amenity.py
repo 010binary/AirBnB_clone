@@ -8,4 +8,4 @@ class Amenity(BaseModel):
     represents Amenity
     name: (str)
     """
-    name = ""
+    name = ""\n
