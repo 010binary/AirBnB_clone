@@ -12,6 +12,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage:
     """
     A class for storing, serializing and deserializing JSON Data
@@ -22,7 +23,6 @@ class FileStorage:
                   "Amenity": Amenity, "City": City, "Review": Review,
                   "State": State}
 
-    
     def all(self):
         """
         Returns the dictionary __objects.
@@ -47,7 +47,6 @@ class FileStorage:
             obj_dict[key] = obj.to_dict()
         with open(self.__file_path, 'w', encoding="UTF-8") as f:
             json.dump(obj_dict, f)
-        
 
     def reload(self):
         """
@@ -61,4 +60,4 @@ class FileStorage:
                 obj = self.class_dict[value['__class__']](**value)
                 self.__objects[key] = obj
         except FileNotFoundError:
-            pass
+            pass\n
