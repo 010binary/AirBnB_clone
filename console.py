@@ -61,16 +61,15 @@ class HBNBCommand(cmd.Cmd):
         }
 
     def do_quit(self, arg):
-        """Quit functionality 
-
+        """Quit functionality
         Args:
-            arg (str): command give 
+            arg (str): command give
 
         Returns:
             bool: Ends the interpreter
         """
         return True
-    
+
     def do_EOF(self, arg):
         """EOF signal to exit the program.
 
@@ -82,7 +81,7 @@ class HBNBCommand(cmd.Cmd):
         """
         print("")
         return True
-    
+
     def emptyline(self):
         """Do nothing upon receiving an empty line.
 
@@ -90,10 +89,10 @@ class HBNBCommand(cmd.Cmd):
             bool: Do nothing upon receiving an empty line.
         """
         return False
-    
+
     def default(self, arg):
         """
-        Default behavior for the cmd module when 
+        Default behavior for the cmd module when
             the input command is not recognized.
 
         Args:
@@ -125,7 +124,7 @@ class HBNBCommand(cmd.Cmd):
 
         print("*** Unknown syntax: {}".format(arg))
         return False
-    
+
     def do_create(self, line):
         """
         Create a new instance of a specified class with given attributes.
@@ -171,12 +170,12 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         except NameError:
             print("** class doesn't exist **")
-    
+
     def do_show(self, arg):
         """
-        Display the string representation of a 
+        Display the string representation of a
             class instance with the given ID.
-        
+
         Usage:
             show <class> <id> or <class>.show(<id>)
         Args:
@@ -281,7 +280,7 @@ class HBNBCommand(cmd.Cmd):
                             Alternate syntax for updating a specific attribute.
 
             - <class>.update(<id>, <dictionary>):
-                            Update multiple attributes of an instance using a dict.
+                            Update multiple attributes of an instance a dict.
 
         Args:
             arg (str): A string containing the class name,
