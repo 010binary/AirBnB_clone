@@ -12,6 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 def parse(arg):
     """
     Parses a string containing optional curly braces {} and/or brackets [].
@@ -20,8 +21,9 @@ def parse(arg):
         arg (str): The string to be parsed.
 
     Returns:
-        list: A list containing the elements of the string, separated and stripped of commas, 
-              with optional curly braces or brackets included as separate elements.
+        list: A list containing the elements of the string, 
+                separated and stripped of commas,
+                with optional curly braces or brackets included as separate elements.
     """
     curly_braces = re.search(r"\{(.*?)\}", arg)
     brackets = re.search(r"\[(.*?)\]", arg)
@@ -90,14 +92,16 @@ class HBNBCommand(cmd.Cmd):
     
     def default(self, arg):
         """
-        Default behavior for the cmd module when the input command is not recognized.
+        Default behavior for the cmd module when 
+            the input command is not recognized.
 
         Args:
             arg (str): The input command string that is not recognized.
 
         Returns:
-            bool: False if the command is not recognized, otherwise the result of 
-            executing the recognized command.
+            bool: False if the command is not recognized,
+                otherwise the result of executing the recognized
+                command.
         """
         argdict = {
             "all": self.do_all,
@@ -125,9 +129,9 @@ class HBNBCommand(cmd.Cmd):
         """
         Create a new instance of a specified class with given attributes.
 
-        Usage: create <class> <key1>=<value1> <key2>=<value2> ...
+        Usage: create <class> <key1>=<value1> <key2>=<value2> cont
 
-        Args:
+        Args
             line (str): A string containing the command and its arguments.
 
         Raises:
@@ -173,8 +177,10 @@ class HBNBCommand(cmd.Cmd):
         Usage:
             show <class> <id> or <class>.show(<id>)
         Args:
-            arg (str): A string containing the class name and the ID of the instance,
-                    separated by whitespace or a dot, or provided as a method call.
+            arg (str): A string containing the class name and
+                        the ID of the instance,
+                        separated by whitespace or a dot,
+                        or provided as a method call.
         Prints:
             str: The string representation of the class instance.
         Raises:
@@ -198,8 +204,10 @@ class HBNBCommand(cmd.Cmd):
         Delete a class instance with the specified ID.
         Usage: destroy <class> <id> or <class>.destroy(<id>)
         Args:
-            arg (str): A string containing the class name and the ID of the instance,
-                    separated by whitespace or a dot, or provided as a method call.
+            arg (str): A string containing the class name and
+                        the ID of the instance,
+                        separated by whitespace or a dot,
+                        or provided as a method call.
         """
         argl = parse(arg)
         objdict = storage.all()
