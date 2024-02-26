@@ -229,16 +229,16 @@ class HBNBCommand(cmd.Cmd):
     def do_all(self, arg):
         """Display string representations of instances.
 
-        Usage: 
+        Usage:
             - all: Display string representations of all instantiated objects.
-            - all <class>: Display string representations of instances of a given class.
-            - <class>.all(): Alternate syntax for displaying instances of a given class.
+            - all <class>: Display string representations of instances class.
+            - <class>.all(): Alternate syntax for displaying instances class.
 
         Args:
             arg (str): A string containing the class name or a method call.
 
         Notes:
-            If a class is specified, only instances of that class are displayed.
+            If a class is specified, only instances are displayed.
             If no class is specified, all instantiated objects are displayed.
         """
         argl = parse(arg)
@@ -255,9 +255,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
         """Retrieve the number of instances of a given class.
-        Usage: 
-            - count <class>: Retrieve the number of instances of the specified class.
-            - <class>.count(): Alternate syntax for retrieving the number of instances of a class.
+        Usage:
+            - count <class>: Retrieve the number of instances of a class.
+            - <class>.count(): Alternate syntax for retrieving the number.
         Args:
             arg (str): A string containing the class name or a method call.
         """
@@ -270,22 +270,22 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Update a class instance with the specified ID by adding or updating 
+        Update a class instance with the specified ID by adding or updating
                     attribute key/value pairs or a dictionary.
 
         Usage:
-            - update <class> <id> <attribute_name> <attribute_value>: 
+            - update <class> <id> <attribute_name> <attribute_value>:
                             Update a specific attribute of an instance.
-                            
-            - <class>.update(<id>, <attribute_name>, <attribute_value>): 
+
+            - <class>.update(<id>, <attribute_name>, <attribute_value>):
                             Alternate syntax for updating a specific attribute.
-                            
-            - <class>.update(<id>, <dictionary>): 
-                            Update multiple attributes of an instance using a dictionary.
+
+            - <class>.update(<id>, <dictionary>):
+                            Update multiple attributes of an instance using a dict.
 
         Args:
-            arg (str): A string containing the class name, 
-                        ID, attribute name/value, 
+            arg (str): A string containing the class name,
+                        ID, attribute name/value,
                         or a dictionary.
 
         Returns:
